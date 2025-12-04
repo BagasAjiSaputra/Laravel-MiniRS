@@ -5,12 +5,14 @@
 @section('content')
 
     <div class="max-w-4xl mx-auto bg-white p-6 shadow rounded">
-        <h1 class="text-2xl font-bold mb-4">Manajemen Dokter</h1>
+        <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold mb-4">Manajemen Dokter</h1>
 
         <a href="{{ route('dokter.create') }}"
            class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
            + Tambah Dokter
         </a>
+        </div>
 
         @if(session('success'))
             <div class="mt-4 bg-green-100 text-green-700 p-3 rounded">
@@ -35,20 +37,20 @@
                     <td class="p-2">{{ $d->spesialis }}</td>
                     <td class="p-2">{{ $d->jam_masuk }}</td>
                     <td class="p-2">{{ $d->jam_pulang }}</td>
-                    <td class="p-2 text-center">
-                        <a href="{{ route('dokter.edit', $d->id) }}"
-                           class="bg-yellow-500 text-white px-2 py-1 rounded hover:bg-yellow-600">
-                           Edit
-                        </a>
+                    <td class="p-2 text-center flex gap-2">
+                        <a href="{{ route('dokter.edit', $d->id) }}" 
+                       class="bg-yellow-500 text-white px-3 py-1 rounded">
+                       Edit
+                    </a>
 
-                        <form action="{{ route('dokter.destroy', $d->id) }}" method="POST" class="inline">
-                            @csrf
-                            @method('DELETE')
-                            <button onclick="return confirm('Hapus data ini?')"
-                                class="bg-red-600 text-white px-2 py-1 rounded hover:bg-red-700">
-                                Hapus
-                            </button>
-                        </form>
+                    <form action="{{ route('dokter.destroy', $d->id) }}" method="POST"
+                          onsubmit="return confirm('Yakin hapus?')">
+                        @csrf
+                        @method('DELETE')
+                        <button class="bg-red-600 text-white px-3 py-1 rounded">
+                            Hapus
+                        </button>
+                    </form>
                     </td>
                 </tr>
                 @endforeach

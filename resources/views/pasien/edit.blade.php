@@ -51,6 +51,7 @@
                 class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
                 Update
             </button>
+            <a href="{{ route('obat.index') }}" class="ml-2 text-gray-600">Kembali</a>
         </form>
     </div>
 @endsection
