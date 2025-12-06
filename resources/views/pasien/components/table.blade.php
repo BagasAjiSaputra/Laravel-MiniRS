@@ -1,7 +1,7 @@
 <table class="w-full border-collapse mt-4">
             <thead>
                 <tr class="bg-gray-200 text-left">
-                    <th class="p-3 border">#</th>
+                    <th class="p-3 border">No</th>
                     <th class="p-3 border">Nama</th>
                     <th class="p-3 border">No HP</th>
                     <th class="p-3 border">Tgl Lahir</th>

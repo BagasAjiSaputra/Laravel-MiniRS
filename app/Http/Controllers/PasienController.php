@@ -8,9 +8,16 @@ use App\Models\Pasien;
 class PasienController extends Controller
 {
     // List Pasien
-    public function index()
+    public function index(Request $request)
     {
-        $pasien = Pasien::orderBy('created_at', 'desc')->get();
+        $query = Pasien::query();
+
+        if ($request->has('search') && $request->search != '') {
+            $query->where('nama', 'like', '%' . $request->search . '%');
+        }
+
+        $pasien = $query->orderBy('created_at', 'desc')->paginate(10);
+
         return view('pasien.index', compact('pasien'));
     }
 

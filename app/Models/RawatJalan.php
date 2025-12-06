@@ -25,4 +25,9 @@ class RawatJalan extends Model
     {
         return $this->belongsTo(Dokter::class, 'id_dokter');
     }
+
+    public function rekamMedis()
+{
+    return $this->belongsTo(RekamMedis::class, 'id_rekam_medis');
+}
 }
