@@ -37,6 +37,14 @@
             <textarea name="keluhan" class="border p-2 w-full"></textarea>
         </div>
         <div>
+            <label>Diagnosis</label>
+            <select name="id_rekam_medis" class="border p-2 w-full">
+                @foreach($dokter as $d)
+                    <option value="{{ $d->id }}">{{ $d->nama_dokter }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div>
             <label>Waktu Kunjungan</label>
             <input type="datetime-local" name="waktu_kunjungan" class="border p-2 w-full">
         </div>

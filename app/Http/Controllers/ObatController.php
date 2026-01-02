@@ -24,7 +24,7 @@ class ObatController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'kategori_obat' => 'required',
+            'nama_obat' => 'required',
             'stok_obat' => 'required|integer'
         ]);
 
@@ -43,7 +43,7 @@ class ObatController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'kategori_obat' => 'required',
+            'nama_obat' => 'required',
             'stok_obat' => 'required|integer'
         ]);
 

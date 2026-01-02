@@ -12,8 +12,8 @@
         @method('PUT')
 
         <label class="block mb-2 font-semibold">Kategori Obat</label>
-        <input type="text" name="kategori_obat"
-               value="{{ $obat->kategori_obat }}"
+        <input type="text" name="nama_obat"
+               value="{{ $obat->nama_obat }}"
                class="w-full border p-2 rounded mb-4"
                required>
 

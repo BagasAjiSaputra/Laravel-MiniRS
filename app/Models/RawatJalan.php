@@ -14,6 +14,7 @@ class RawatJalan extends Model
         'keluhan',
         'waktu_kunjungan',
         'status_pemeriksaan',
+        'id_rekam_medis'
     ];
 
     public function pasien()
@@ -27,7 +28,7 @@ class RawatJalan extends Model
     }
 
     public function rekamMedis()
-{
-    return $this->belongsTo(RekamMedis::class, 'id_rekam_medis');
-}
+    {
+        return $this->belongsTo(RekamMedis::class, 'id_rekam_medis');
+    }
 }

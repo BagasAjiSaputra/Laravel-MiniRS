@@ -8,6 +8,7 @@
             <h2 class="text-2xl font-semibold">Data Pasien</h2>
 
             <div class="flex gap-3 items-center">
+
                 <form method="GET" class="">
                     <input type="text" name="search" value="{{ request('search') }}" placeholder="Cari nama pasien..."
                         class="px-4 py-2 border rounded-lg w-64 focus:ring focus:border-blue-500"
@@ -17,6 +18,7 @@
                     class="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition">
                     + Tambah Pasien
                 </a>
+                
             </div>
         </div>
         @include('pasien.components.table')

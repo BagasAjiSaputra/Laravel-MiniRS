@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+    public function down(): void
+    {
+        Schema::dropIfExists('rawat_jalan');
+    }
+
     public function up(): void
     {
         Schema::create('rawat_jalan', function (Blueprint $table) {
@@ -21,17 +23,8 @@ return new class extends Migration
                   ->default('Menunggu');
             $table->timestamps();
 
-            // Foreign Keys
             $table->foreign('id_pasien')->references('id')->on('pasien')->onDelete('cascade');
             $table->foreign('id_dokter')->references('id')->on('dokter')->onDelete('cascade');
         });
-    }
-
-    /**
-     * Reverse the migrations.
-     */
-    public function down(): void
-    {
-        Schema::dropIfExists('rawat_jalan');
     }
 };
